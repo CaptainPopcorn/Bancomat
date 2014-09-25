@@ -94,6 +94,7 @@
             // txtCentime
             // 
             this.txtCentime.Location = new System.Drawing.Point(15, 157);
+            this.txtCentime.MaxLength = 2;
             this.txtCentime.Name = "txtCentime";
             this.txtCentime.Size = new System.Drawing.Size(154, 20);
             this.txtCentime.TabIndex = 5;
