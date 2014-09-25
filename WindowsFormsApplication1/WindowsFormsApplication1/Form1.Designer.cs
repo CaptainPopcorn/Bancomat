@@ -100,9 +100,11 @@
             // TxBCentimes
             // 
             this.TxBCentimes.Location = new System.Drawing.Point(15, 157);
+            this.TxBCentimes.MaxLength = 2;
             this.TxBCentimes.Name = "TxBCentimes";
             this.TxBCentimes.Size = new System.Drawing.Size(154, 20);
             this.TxBCentimes.TabIndex = 5;
+            this.TxBCentimes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxBEntiers_KeyPress);
             // 
             // label3
             // 
