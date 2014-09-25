@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class FrmBancomat
+    partial class Form1
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TxBEntiers = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.TxBCentimes = new System.Windows.Forms.TextBox();
+            this.txtCentime = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.BtnValider = new System.Windows.Forms.Button();
             this.BtnEffacer = new System.Windows.Forms.Button();
@@ -67,7 +67,6 @@
             this.CbXDevise.Name = "CbXDevise";
             this.CbXDevise.Size = new System.Drawing.Size(157, 21);
             this.CbXDevise.TabIndex = 1;
-            this.CbXDevise.SelectedIndexChanged += new System.EventHandler(this.CbXDevise_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -77,7 +76,6 @@
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Devise";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // TxBEntiers
             // 
@@ -85,6 +83,7 @@
             this.TxBEntiers.Name = "TxBEntiers";
             this.TxBEntiers.Size = new System.Drawing.Size(154, 20);
             this.TxBEntiers.TabIndex = 3;
+            this.TxBEntiers.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxBEntiers_KeyPress);
             // 
             // label2
             // 
@@ -95,12 +94,13 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Entiers";
             // 
-            // TxBCentimes
+            // txtCentime
             // 
-            this.TxBCentimes.Location = new System.Drawing.Point(15, 157);
-            this.TxBCentimes.Name = "TxBCentimes";
-            this.TxBCentimes.Size = new System.Drawing.Size(154, 20);
-            this.TxBCentimes.TabIndex = 5;
+            this.txtCentime.Location = new System.Drawing.Point(15, 157);
+            this.txtCentime.MaxLength = 2;
+            this.txtCentime.Name = "txtCentime";
+            this.txtCentime.Size = new System.Drawing.Size(154, 20);
+            this.txtCentime.TabIndex = 5;
             // 
             // label3
             // 
@@ -128,7 +128,6 @@
             this.BtnEffacer.TabIndex = 8;
             this.BtnEffacer.Text = "Effacer";
             this.BtnEffacer.UseVisualStyleBackColor = true;
-            this.BtnEffacer.Click += new System.EventHandler(this.BtnEffacer_Click);
             // 
             // BtnQuitter
             // 
@@ -161,16 +160,18 @@
             // aProposDeToolStripMenuItem
             // 
             this.aProposDeToolStripMenuItem.Name = "aProposDeToolStripMenuItem";
-            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.aProposDeToolStripMenuItem.Text = "A propos de...";
+            this.aProposDeToolStripMenuItem.Click += new System.EventHandler(this.aProposDeToolStripMenuItem_Click);
             // 
             // aideToolStripMenuItem1
             // 
             this.aideToolStripMenuItem1.Name = "aideToolStripMenuItem1";
-            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
+            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
             this.aideToolStripMenuItem1.Text = "Aide";
+            this.aideToolStripMenuItem1.Click += new System.EventHandler(this.aideToolStripMenuItem1_Click);
             // 
-            // FrmBancomat
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -179,7 +180,7 @@
             this.Controls.Add(this.BtnEffacer);
             this.Controls.Add(this.BtnValider);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.TxBCentimes);
+            this.Controls.Add(this.txtCentime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TxBEntiers);
             this.Controls.Add(this.label1);
@@ -205,7 +206,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxBEntiers;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxBCentimes;
+        private System.Windows.Forms.TextBox txtCentime;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnValider;
         private System.Windows.Forms.Button BtnEffacer;

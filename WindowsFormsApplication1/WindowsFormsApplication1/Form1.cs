@@ -10,19 +10,20 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class FrmBancomat : Form
+    public partial class Form1 : Form
     {
-        public FrmBancomat()
+        public Form1()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void aProposDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormAPropos frm = new FormAPropos();
+            frm.Show();
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void aideToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
         }
@@ -36,9 +37,9 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void CbXDevise_SelectedIndexChanged(object sender, EventArgs e)
+        private void TxBEntiers_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+             
         }
     }
 }
