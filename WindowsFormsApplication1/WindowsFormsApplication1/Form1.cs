@@ -17,14 +17,16 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void aProposDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormAPropos frm = new FormAPropos();
+            frm.Show();
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void aideToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            FormAide frm = new FormAide();
+            frm.Show();        
         }
     }
 }
