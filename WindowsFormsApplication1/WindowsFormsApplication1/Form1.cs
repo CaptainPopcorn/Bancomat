@@ -10,10 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    
-    public partial class Form1 : Form
+    public partial class FrmBancomat : Form
     {
-        public Form1()
+        public FrmBancomat()
         {
             InitializeComponent();
         }
@@ -22,8 +21,33 @@ namespace WindowsFormsApplication1
         {
 
         }
+        // Accept only number
+        private void TxBEntiers_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          if (!char.IsControl(e.KeyChar) 
+          && !char.IsDigit(e.KeyChar))
+          {
+            e.Handled = true;
+          }
+        }
 
-        private void BtnValider_Click(object sender, EventArgs e)
+
+        private void BtnEffacer_Click(object sender, EventArgs e)
+        {
+            //test
+            CbXDevise.SelectedIndex = 0;
+            TxBEntiers.Text = "";
+            TxBCentimes.Text = "";
+            TxBResultat.Text = "";
+
+        }
+
+        private void CbXDevise_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxBEntiers_TextChanged(object sender, EventArgs e)
         {
             int[] valeurBillets = {1000, 200, 100, 50, 20, 10, 5, 2, 1};
             int[] valeurCentimes = {50, 20, 10, 5};
@@ -73,3 +97,4 @@ namespace WindowsFormsApplication1
    
    
 }
+

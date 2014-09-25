@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class Form1
+    partial class FrmBancomat
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -60,10 +60,15 @@
             // CbXDevise
             // 
             this.CbXDevise.FormattingEnabled = true;
+            this.CbXDevise.Items.AddRange(new object[] {
+            "CHF",
+            "EUR - €",
+            "USD - $"});
             this.CbXDevise.Location = new System.Drawing.Point(12, 68);
             this.CbXDevise.Name = "CbXDevise";
             this.CbXDevise.Size = new System.Drawing.Size(157, 21);
             this.CbXDevise.TabIndex = 1;
+            this.CbXDevise.SelectedIndexChanged += new System.EventHandler(this.CbXDevise_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -80,6 +85,8 @@
             this.TxBEntiers.Name = "TxBEntiers";
             this.TxBEntiers.Size = new System.Drawing.Size(154, 20);
             this.TxBEntiers.TabIndex = 3;
+            this.TxBEntiers.TextChanged += new System.EventHandler(this.TxBEntiers_TextChanged);
+            this.TxBEntiers.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxBEntiers_KeyPress);
             // 
             // label2
             // 
@@ -93,9 +100,11 @@
             // TxBCentimes
             // 
             this.TxBCentimes.Location = new System.Drawing.Point(15, 157);
+            this.TxBCentimes.MaxLength = 2;
             this.TxBCentimes.Name = "TxBCentimes";
             this.TxBCentimes.Size = new System.Drawing.Size(154, 20);
             this.TxBCentimes.TabIndex = 5;
+            this.TxBCentimes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxBEntiers_KeyPress);
             // 
             // label3
             // 
@@ -124,6 +133,7 @@
             this.BtnEffacer.TabIndex = 8;
             this.BtnEffacer.Text = "Effacer";
             this.BtnEffacer.UseVisualStyleBackColor = true;
+            this.BtnEffacer.Click += new System.EventHandler(this.BtnEffacer_Click);
             // 
             // BtnQuitter
             // 
@@ -165,7 +175,7 @@
             this.aideToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.aideToolStripMenuItem1.Text = "Aide";
             // 
-            // Form1
+            // FrmBancomat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,8 +192,9 @@
             this.Controls.Add(this.TxBResultat);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "FrmBancomat";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.BtnEffacer_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
