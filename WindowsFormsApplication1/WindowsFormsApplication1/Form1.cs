@@ -29,7 +29,7 @@ namespace WindowsFormsApplication1
 
         private void BtnEffacer_Click(object sender, EventArgs e)
         {
-            CbXDevise.TabIndex = 1;
+            CbXDevise.SelectedIndex = 0;
             TxBEntiers.Text = "";
             TxBCentimes.Text = "";
             TxBResultat.Text = "";
@@ -38,7 +38,7 @@ namespace WindowsFormsApplication1
 
         private void CbXDevise_SelectedIndexChanged(object sender, EventArgs e)
         {
-             
+
         }
     }
 }

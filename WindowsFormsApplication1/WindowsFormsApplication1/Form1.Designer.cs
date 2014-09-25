@@ -59,6 +59,10 @@
             // CbXDevise
             // 
             this.CbXDevise.FormattingEnabled = true;
+            this.CbXDevise.Items.AddRange(new object[] {
+            "CHF",
+            "EUR - €",
+            "USD - $"});
             this.CbXDevise.Location = new System.Drawing.Point(12, 68);
             this.CbXDevise.Name = "CbXDevise";
             this.CbXDevise.Size = new System.Drawing.Size(157, 21);
@@ -185,6 +189,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmBancomat";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.BtnEffacer_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
