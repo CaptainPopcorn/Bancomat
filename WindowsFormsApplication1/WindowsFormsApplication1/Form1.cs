@@ -32,13 +32,10 @@ namespace WindowsFormsApplication1
           }
         }
 
-        private void BtnEffacer_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void BtnEffacer_Click(object sender, EventArgs e)
         {
+            //test
             CbXDevise.SelectedIndex = 0;
             TxBEntiers.Text = "";
             TxBCentimes.Text = "";
