@@ -21,10 +21,15 @@ namespace WindowsFormsApplication1
         {
 
         }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        // Accept only number
+        private void TxBEntiers_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+          if (!char.IsControl(e.KeyChar) 
+          && !char.IsDigit(e.KeyChar))
+          {
+            e.Handled = true;
+          }
         }
     }
 }
+

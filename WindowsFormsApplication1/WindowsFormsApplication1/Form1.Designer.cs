@@ -79,6 +79,7 @@
             this.TxBEntiers.Name = "TxBEntiers";
             this.TxBEntiers.Size = new System.Drawing.Size(154, 20);
             this.TxBEntiers.TabIndex = 3;
+            this.TxBEntiers.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxBEntiers_KeyPress);
             // 
             // label2
             // 
@@ -154,13 +155,13 @@
             // aProposDeToolStripMenuItem
             // 
             this.aProposDeToolStripMenuItem.Name = "aProposDeToolStripMenuItem";
-            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.aProposDeToolStripMenuItem.Text = "A propos de...";
             // 
             // aideToolStripMenuItem1
             // 
             this.aideToolStripMenuItem1.Name = "aideToolStripMenuItem1";
-            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.aideToolStripMenuItem1.Text = "Aide";
             // 
             // Form1
