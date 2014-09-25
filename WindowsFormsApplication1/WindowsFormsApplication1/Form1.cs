@@ -28,5 +28,10 @@ namespace WindowsFormsApplication1
             FormAide frm = new FormAide();
             frm.Show();        
         }
+
+        private void TxBEntiers_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

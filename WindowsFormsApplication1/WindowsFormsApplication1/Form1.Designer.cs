@@ -63,7 +63,6 @@
             this.CbXDevise.Name = "CbXDevise";
             this.CbXDevise.Size = new System.Drawing.Size(157, 21);
             this.CbXDevise.TabIndex = 1;
-            this.CbXDevise.SelectedIndexChanged += new System.EventHandler(this.CbXDevise_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -80,6 +79,7 @@
             this.TxBEntiers.Name = "TxBEntiers";
             this.TxBEntiers.Size = new System.Drawing.Size(154, 20);
             this.TxBEntiers.TabIndex = 3;
+            this.TxBEntiers.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxBEntiers_KeyPress);
             // 
             // label2
             // 
@@ -97,7 +97,6 @@
             this.txtCentime.Name = "txtCentime";
             this.txtCentime.Size = new System.Drawing.Size(154, 20);
             this.txtCentime.TabIndex = 5;
-            this.txtCentime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxBEntiers_KeyPress);
             // 
             // label3
             // 
@@ -125,7 +124,6 @@
             this.BtnEffacer.TabIndex = 8;
             this.BtnEffacer.Text = "Effacer";
             this.BtnEffacer.UseVisualStyleBackColor = true;
-            this.BtnEffacer.Click += new System.EventHandler(this.BtnEffacer_Click);
             // 
             // BtnQuitter
             // 
@@ -158,18 +156,18 @@
             // aProposDeToolStripMenuItem
             // 
             this.aProposDeToolStripMenuItem.Name = "aProposDeToolStripMenuItem";
-            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.aProposDeToolStripMenuItem.Text = "A propos de...";
             this.aProposDeToolStripMenuItem.Click += new System.EventHandler(this.aProposDeToolStripMenuItem_Click);
             // 
             // aideToolStripMenuItem1
             // 
             this.aideToolStripMenuItem1.Name = "aideToolStripMenuItem1";
-            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
+            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
             this.aideToolStripMenuItem1.Text = "Aide";
             this.aideToolStripMenuItem1.Click += new System.EventHandler(this.aideToolStripMenuItem1_Click);
             // 
-            // FrmBancomat
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,7 +184,7 @@
             this.Controls.Add(this.TxBResultat);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FrmBancomat";
+            this.Name = "Form1";
             this.Text = "Bancomat";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
