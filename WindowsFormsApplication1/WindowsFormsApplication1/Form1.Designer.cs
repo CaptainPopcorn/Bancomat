@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxBResultat = new System.Windows.Forms.TextBox();
             this.CbXDevise = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TxBEntiers = new System.Windows.Forms.TextBox();
@@ -47,13 +47,15 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // TxBResultat
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 212);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 115);
-            this.textBox1.TabIndex = 0;
+            this.TxBResultat.Location = new System.Drawing.Point(12, 212);
+            this.TxBResultat.Multiline = true;
+            this.TxBResultat.Name = "TxBResultat";
+            this.TxBResultat.ReadOnly = true;
+            this.TxBResultat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TxBResultat.Size = new System.Drawing.Size(157, 115);
+            this.TxBResultat.TabIndex = 0;
             // 
             // CbXDevise
             // 
@@ -71,7 +73,6 @@
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Devise";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // TxBEntiers
             // 
@@ -113,6 +114,7 @@
             this.BtnValider.TabIndex = 7;
             this.BtnValider.Text = "Valider";
             this.BtnValider.UseVisualStyleBackColor = true;
+            this.BtnValider.Click += new System.EventHandler(this.BtnValider_Click);
             // 
             // BtnEffacer
             // 
@@ -154,13 +156,13 @@
             // aProposDeToolStripMenuItem
             // 
             this.aProposDeToolStripMenuItem.Name = "aProposDeToolStripMenuItem";
-            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.aProposDeToolStripMenuItem.Text = "A propos de...";
             // 
             // aideToolStripMenuItem1
             // 
             this.aideToolStripMenuItem1.Name = "aideToolStripMenuItem1";
-            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.aideToolStripMenuItem1.Text = "Aide";
             // 
             // Form1
@@ -177,7 +179,7 @@
             this.Controls.Add(this.TxBEntiers);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CbXDevise);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxBResultat);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -192,7 +194,7 @@
         #endregion
 
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxBResultat;
         private System.Windows.Forms.ComboBox CbXDevise;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxBEntiers;
