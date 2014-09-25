@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class FrmBancomat : Form
     {
-        public Form1()
+        public FrmBancomat()
         {
             InitializeComponent();
         }
@@ -21,10 +21,28 @@ namespace WindowsFormsApplication1
         {
 
         }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        // Accept only number
+        private void TxBEntiers_KeyPress(object sender, KeyPressEventArgs e)
         {
+          if (!char.IsControl(e.KeyChar) 
+          && !char.IsDigit(e.KeyChar))
+          {
+            e.Handled = true;
+          }
+        }
 
+        private void BtnEffacer_Click(object sender, EventArgs e)
+        {
+            CbXDevise.TabIndex = 1;
+            TxBEntiers.Text = "";
+            TxBCentimes.Text = "";
+            TxBResultat.Text = "";
+
+        }
+
+        private void CbXDevise_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             
         }
 
         private void TxBEntiers_TextChanged(object sender, EventArgs e)
@@ -39,3 +57,4 @@ namespace WindowsFormsApplication1
         }
     }
 }
+
