@@ -81,6 +81,7 @@
             this.TxBEntiers.Name = "TxBEntiers";
             this.TxBEntiers.Size = new System.Drawing.Size(154, 20);
             this.TxBEntiers.TabIndex = 3;
+            this.TxBEntiers.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxBEntiers_KeyPress);
             // 
             // label2
             // 
@@ -183,6 +184,7 @@
             this.Controls.Add(this.TxBResultat);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimizeBox = false;
             this.Name = "FrmBancomat";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);

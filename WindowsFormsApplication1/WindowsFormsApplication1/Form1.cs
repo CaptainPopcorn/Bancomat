@@ -22,6 +22,7 @@ namespace WindowsFormsApplication1
 
         }
         // Accept only number
+        //retest
         private void TxBEntiers_KeyPress(object sender, KeyPressEventArgs e)
         {
           if (!char.IsControl(e.KeyChar) 
