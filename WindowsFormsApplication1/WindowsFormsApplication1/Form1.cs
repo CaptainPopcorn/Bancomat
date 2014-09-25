@@ -26,5 +26,16 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void TxBEntiers_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxBCentimes_TextChanged(object sender, EventArgs e)
+        {
+                  
+            
+        }
     }
 }
