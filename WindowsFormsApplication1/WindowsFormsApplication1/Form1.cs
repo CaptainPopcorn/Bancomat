@@ -30,7 +30,6 @@ namespace WindowsFormsApplication1
             TxBResultat.Lines = Retrait(Int32.Parse(TxBEntiers.Text), Int32.Parse(TxBCentimes.Text), valeurBillets, valeurCentimes, "chf");
 
         }
-
         public string[] Retrait(int entier, int centimes, int[] valeurBillets, int[] valeurCentimes, string devise)
         {
             string[] lignes;
@@ -40,34 +39,36 @@ namespace WindowsFormsApplication1
             double memCentimes = Convert.ToSingle(centimes);
 
             // traitement des entiers           
-            foreach(int valeur in valeurBillets)
+            foreach (int valeur in valeurBillets)
             {
                 nbBillets = Convert.ToInt32(Math.Floor(memEntier / valeur));
                 memEntier -= valeur * nbBillets;
                 if (nbBillets != 0)
-                { 
+                {
                     lignes[i] = nbBillets.ToString() + " x " + valeur.ToString() + " " + devise;
                     i++;
                 }
                 nbBillets = 0;
-                
+
             }
             // traitement des centimes      
-            foreach(int valeur in valeurCentimes)
+            foreach (int valeur in valeurCentimes)
             {
                 nbBillets = Convert.ToInt32(Math.Floor(memCentimes / valeur));
                 memCentimes -= valeur * nbBillets;
                 if (nbBillets != 0)
-                { 
+                {
                     lignes[i] = nbBillets.ToString() + " x " + valeur.ToString() + " cts de " + devise;
                     i++;
                 }
                 nbBillets = 0;
-                
+
             }
-            return(lignes);
-     
+            return (lignes);
+
         }
+
+       
     }
    
    
