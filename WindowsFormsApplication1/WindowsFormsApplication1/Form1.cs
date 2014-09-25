@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class FrmBancomat : Form
     {
-        public Form1()
+        public FrmBancomat()
         {
             InitializeComponent();
         }
@@ -29,6 +29,20 @@ namespace WindowsFormsApplication1
           {
             e.Handled = true;
           }
+        }
+
+        private void BtnEffacer_Click(object sender, EventArgs e)
+        {
+            CbXDevise.TabIndex = 1;
+            TxBEntiers.Text = "";
+            TxBCentimes.Text = "";
+            TxBResultat.Text = "";
+
+        }
+
+        private void CbXDevise_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             
         }
     }
 }

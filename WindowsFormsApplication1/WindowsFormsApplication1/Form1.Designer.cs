@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class Form1
+    partial class FrmBancomat
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxBResultat = new System.Windows.Forms.TextBox();
             this.CbXDevise = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TxBEntiers = new System.Windows.Forms.TextBox();
@@ -47,13 +47,14 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // TxBResultat
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 212);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 115);
-            this.textBox1.TabIndex = 0;
+            this.TxBResultat.Location = new System.Drawing.Point(12, 212);
+            this.TxBResultat.Multiline = true;
+            this.TxBResultat.Name = "TxBResultat";
+            this.TxBResultat.ReadOnly = true;
+            this.TxBResultat.Size = new System.Drawing.Size(157, 115);
+            this.TxBResultat.TabIndex = 0;
             // 
             // CbXDevise
             // 
@@ -62,6 +63,7 @@
             this.CbXDevise.Name = "CbXDevise";
             this.CbXDevise.Size = new System.Drawing.Size(157, 21);
             this.CbXDevise.TabIndex = 1;
+            this.CbXDevise.SelectedIndexChanged += new System.EventHandler(this.CbXDevise_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -79,7 +81,6 @@
             this.TxBEntiers.Name = "TxBEntiers";
             this.TxBEntiers.Size = new System.Drawing.Size(154, 20);
             this.TxBEntiers.TabIndex = 3;
-            this.TxBEntiers.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxBEntiers_KeyPress);
             // 
             // label2
             // 
@@ -123,6 +124,7 @@
             this.BtnEffacer.TabIndex = 8;
             this.BtnEffacer.Text = "Effacer";
             this.BtnEffacer.UseVisualStyleBackColor = true;
+            this.BtnEffacer.Click += new System.EventHandler(this.BtnEffacer_Click);
             // 
             // BtnQuitter
             // 
@@ -164,7 +166,7 @@
             this.aideToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.aideToolStripMenuItem1.Text = "Aide";
             // 
-            // Form1
+            // FrmBancomat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,10 +180,10 @@
             this.Controls.Add(this.TxBEntiers);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CbXDevise);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxBResultat);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "FrmBancomat";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -193,7 +195,7 @@
         #endregion
 
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxBResultat;
         private System.Windows.Forms.ComboBox CbXDevise;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxBEntiers;
