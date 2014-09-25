@@ -35,7 +35,7 @@ namespace WindowsFormsApplication1
         {
             CbXDevise.TabIndex = 1;
             TxBEntiers.Text = "";
-            TxBCentimes.Text = "";
+            txtCentime.Text = "";
             TxBResultat.Text = "";
 
         }
