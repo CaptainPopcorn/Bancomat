@@ -92,6 +92,12 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void aProposDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //JTR : TEST
+            
+        }
+
        
     }
    

@@ -50,6 +50,7 @@
             // TxBResultat
             // 
             this.TxBResultat.Location = new System.Drawing.Point(12, 212);
+            this.TxBResultat.Margin = new System.Windows.Forms.Padding(4);
             this.TxBResultat.Multiline = true;
             this.TxBResultat.Name = "TxBResultat";
             this.TxBResultat.ReadOnly = true;
@@ -65,6 +66,7 @@
             "EUR - €",
             "USD - $"});
             this.CbXDevise.Location = new System.Drawing.Point(12, 68);
+            this.CbXDevise.Margin = new System.Windows.Forms.Padding(4);
             this.CbXDevise.Name = "CbXDevise";
             this.CbXDevise.Size = new System.Drawing.Size(157, 21);
             this.CbXDevise.TabIndex = 1;
@@ -82,6 +84,7 @@
             // TxBEntiers
             // 
             this.TxBEntiers.Location = new System.Drawing.Point(15, 112);
+            this.TxBEntiers.Margin = new System.Windows.Forms.Padding(4);
             this.TxBEntiers.Name = "TxBEntiers";
             this.TxBEntiers.Size = new System.Drawing.Size(154, 20);
             this.TxBEntiers.TabIndex = 3;
@@ -100,6 +103,7 @@
             // TxBCentimes
             // 
             this.TxBCentimes.Location = new System.Drawing.Point(15, 157);
+            this.TxBCentimes.Margin = new System.Windows.Forms.Padding(4);
             this.TxBCentimes.MaxLength = 2;
             this.TxBCentimes.Name = "TxBCentimes";
             this.TxBCentimes.Size = new System.Drawing.Size(154, 20);
@@ -118,16 +122,18 @@
             // BtnValider
             // 
             this.BtnValider.Location = new System.Drawing.Point(12, 183);
+            this.BtnValider.Margin = new System.Windows.Forms.Padding(4);
             this.BtnValider.Name = "BtnValider";
             this.BtnValider.Size = new System.Drawing.Size(157, 23);
             this.BtnValider.TabIndex = 7;
             this.BtnValider.Text = "Valider";
             this.BtnValider.UseVisualStyleBackColor = true;
-            this.BtnValider.Click += new System.EventHandler(this.BtnValider_Click);
+            //this.BtnValider.Click += new System.EventHandler(this.BtnValider_Click);
             // 
             // BtnEffacer
             // 
             this.BtnEffacer.Location = new System.Drawing.Point(13, 348);
+            this.BtnEffacer.Margin = new System.Windows.Forms.Padding(4);
             this.BtnEffacer.Name = "BtnEffacer";
             this.BtnEffacer.Size = new System.Drawing.Size(75, 23);
             this.BtnEffacer.TabIndex = 8;
@@ -138,6 +144,7 @@
             // BtnQuitter
             // 
             this.BtnQuitter.Location = new System.Drawing.Point(94, 348);
+            this.BtnQuitter.Margin = new System.Windows.Forms.Padding(4);
             this.BtnQuitter.Name = "BtnQuitter";
             this.BtnQuitter.Size = new System.Drawing.Size(75, 23);
             this.BtnQuitter.TabIndex = 9;
@@ -166,13 +173,14 @@
             // aProposDeToolStripMenuItem
             // 
             this.aProposDeToolStripMenuItem.Name = "aProposDeToolStripMenuItem";
-            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.aProposDeToolStripMenuItem.Text = "A propos de...";
+            this.aProposDeToolStripMenuItem.Click += new System.EventHandler(this.aProposDeToolStripMenuItem_Click);
             // 
             // aideToolStripMenuItem1
             // 
             this.aideToolStripMenuItem1.Name = "aideToolStripMenuItem1";
-            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
+            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(175, 24);
             this.aideToolStripMenuItem1.Text = "Aide";
             // 
             // FrmBancomat
@@ -192,6 +200,7 @@
             this.Controls.Add(this.TxBResultat);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmBancomat";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.BtnEffacer_Click);
