@@ -172,14 +172,14 @@
             // aProposDeToolStripMenuItem
             // 
             this.aProposDeToolStripMenuItem.Name = "aProposDeToolStripMenuItem";
-            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.aProposDeToolStripMenuItem.Text = "A propos de...";
             this.aProposDeToolStripMenuItem.Click += new System.EventHandler(this.aProposDeToolStripMenuItem_Click);
             // 
             // aideToolStripMenuItem1
             // 
             this.aideToolStripMenuItem1.Name = "aideToolStripMenuItem1";
-            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.aideToolStripMenuItem1.Text = "Aide";
             this.aideToolStripMenuItem1.Click += new System.EventHandler(this.aideToolStripMenuItem1_Click);
             // 
@@ -202,7 +202,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmBancomat";
-            this.Text = "Form1";
+            this.Text = "Bancomat";
             this.Load += new System.EventHandler(this.BtnEffacer_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
