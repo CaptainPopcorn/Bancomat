@@ -148,7 +148,7 @@
             this.BtnQuitter.TabIndex = 9;
             this.BtnQuitter.Text = "Quitter";
             this.BtnQuitter.UseVisualStyleBackColor = true;
-            //this.BtnQuitter.Click += new System.EventHandler(this.BtnQuitter_Click);
+            this.BtnQuitter.Click += new System.EventHandler(this.BtnQuitter_Click);
             // 
             // menuStrip1
             // 
@@ -172,16 +172,16 @@
             // aProposDeToolStripMenuItem
             // 
             this.aProposDeToolStripMenuItem.Name = "aProposDeToolStripMenuItem";
-            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aProposDeToolStripMenuItem.Text = "A propos de...";
             this.aProposDeToolStripMenuItem.Click += new System.EventHandler(this.aProposDeToolStripMenuItem_Click);
             // 
             // aideToolStripMenuItem1
             // 
             this.aideToolStripMenuItem1.Name = "aideToolStripMenuItem1";
-            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
+            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.aideToolStripMenuItem1.Text = "Aide";
-           // this.aideToolStripMenuItem1.Click += new System.EventHandler(this.aideToolStripMenuItem1_Click);
+            this.aideToolStripMenuItem1.Click += new System.EventHandler(this.aideToolStripMenuItem1_Click);
             // 
             // FrmBancomat
             // 
