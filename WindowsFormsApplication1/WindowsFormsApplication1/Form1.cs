@@ -12,6 +12,7 @@ namespace WindowsFormsApplication1
 {
     public partial class FrmBancomat : Form
     {
+        string devise;
         public FrmBancomat()
         {
             InitializeComponent();
@@ -119,10 +120,22 @@ namespace WindowsFormsApplication1
 
                case   1:;
                    break;
-
+                   
                case    2:;
                    break;
         }
+            TxBResultat.Lines = Retrait(Int32.Parse(TxBEntiers.Text), Int32.Parse(TxBCentimes.Text), valeurBillets, valeurCentimes, devise);
+        }
+
+        private void FrmBancomat_Activated(object sender, EventArgs e)
+        {
+            devise = CbXDevise.SelectedItem.ToString();
+        }
+
+        private void CbXDevise_TabIndexChanged(object sender, EventArgs e)
+        {
+            devise = CbXDevise.SelectedItem.ToString();
+            
         }
 
        

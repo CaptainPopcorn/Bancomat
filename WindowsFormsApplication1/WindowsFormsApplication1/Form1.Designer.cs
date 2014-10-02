@@ -70,7 +70,7 @@
             this.CbXDevise.Name = "CbXDevise";
             this.CbXDevise.Size = new System.Drawing.Size(157, 21);
             this.CbXDevise.TabIndex = 1;
-            this.CbXDevise.TextChanged += new System.EventHandler(this.CbXDevise_TextChanged);
+            this.CbXDevise.TabIndexChanged += new System.EventHandler(this.CbXDevise_TabIndexChanged);
             // 
             // label1
             // 
@@ -204,6 +204,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmBancomat";
             this.Text = "Bancomat";
+            this.Activated += new System.EventHandler(this.FrmBancomat_Activated);
             this.Load += new System.EventHandler(this.BtnEffacer_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
