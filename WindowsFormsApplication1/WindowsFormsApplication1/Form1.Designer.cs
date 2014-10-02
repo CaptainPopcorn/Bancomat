@@ -44,6 +44,15 @@
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aideToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gToolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gToolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,16 +182,88 @@
             // aProposDeToolStripMenuItem
             // 
             this.aProposDeToolStripMenuItem.Name = "aProposDeToolStripMenuItem";
-            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aProposDeToolStripMenuItem.Text = "A propos de...";
             this.aProposDeToolStripMenuItem.Click += new System.EventHandler(this.aProposDeToolStripMenuItem_Click);
             // 
             // aideToolStripMenuItem1
             // 
+            this.aideToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gToolStripMenuItem});
             this.aideToolStripMenuItem1.Name = "aideToolStripMenuItem1";
-            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
+            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.aideToolStripMenuItem1.Text = "Aide";
+            // 
             this.aideToolStripMenuItem1.Click += new System.EventHandler(this.aideToolStripMenuItem1_Click);
+            // gToolStripMenuItem
+            // 
+            this.gToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gToolStripMenuItem1});
+            this.gToolStripMenuItem.Name = "gToolStripMenuItem";
+            this.gToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gToolStripMenuItem.Text = "g";
+            // 
+            // gToolStripMenuItem1
+            // 
+            this.gToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gToolStripMenuItem2});
+            this.gToolStripMenuItem1.Name = "gToolStripMenuItem1";
+            this.gToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.gToolStripMenuItem1.Text = "g";
+            // 
+            // gToolStripMenuItem2
+            // 
+            this.gToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gToolStripMenuItem3});
+            this.gToolStripMenuItem2.Name = "gToolStripMenuItem2";
+            this.gToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.gToolStripMenuItem2.Text = "g";
+            // 
+            // gToolStripMenuItem3
+            // 
+            this.gToolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gToolStripMenuItem4});
+            this.gToolStripMenuItem3.Name = "gToolStripMenuItem3";
+            this.gToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.gToolStripMenuItem3.Text = "g";
+            // 
+            // gToolStripMenuItem4
+            // 
+            this.gToolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gToolStripMenuItem5});
+            this.gToolStripMenuItem4.Name = "gToolStripMenuItem4";
+            this.gToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.gToolStripMenuItem4.Text = "g";
+            // 
+            // gToolStripMenuItem5
+            // 
+            this.gToolStripMenuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gToolStripMenuItem6});
+            this.gToolStripMenuItem5.Name = "gToolStripMenuItem5";
+            this.gToolStripMenuItem5.Size = new System.Drawing.Size(152, 22);
+            this.gToolStripMenuItem5.Text = "g";
+            // 
+            // gToolStripMenuItem6
+            // 
+            this.gToolStripMenuItem6.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gToolStripMenuItem7});
+            this.gToolStripMenuItem6.Name = "gToolStripMenuItem6";
+            this.gToolStripMenuItem6.Size = new System.Drawing.Size(152, 22);
+            this.gToolStripMenuItem6.Text = "g";
+            // 
+            // gToolStripMenuItem7
+            // 
+            this.gToolStripMenuItem7.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gToolStripMenuItem8});
+            this.gToolStripMenuItem7.Name = "gToolStripMenuItem7";
+            this.gToolStripMenuItem7.Size = new System.Drawing.Size(152, 22);
+            this.gToolStripMenuItem7.Text = "g";
+            // 
+            // gToolStripMenuItem8
+            // 
+            this.gToolStripMenuItem8.Name = "gToolStripMenuItem8";
+            this.gToolStripMenuItem8.Size = new System.Drawing.Size(152, 22);
+            this.gToolStripMenuItem8.Text = "g";
             // 
             // FrmBancomat
             // 
@@ -230,6 +311,15 @@
         private System.Windows.Forms.ToolStripMenuItem aideToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aProposDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aideToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem gToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem gToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem gToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem gToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem gToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem gToolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem gToolStripMenuItem7;
+        private System.Windows.Forms.ToolStripMenuItem gToolStripMenuItem8;
     }
 }
 
