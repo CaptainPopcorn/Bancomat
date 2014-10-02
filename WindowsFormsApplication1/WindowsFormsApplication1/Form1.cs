@@ -94,8 +94,19 @@ namespace WindowsFormsApplication1
 
         private void aProposDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //JTR : TEST
-            
+            FormAPropos myForm = new FormAPropos();
+            myForm.Show();
+        }
+
+        private void aideToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormAide myForm = new FormAide();
+            myForm.Show();
+        }
+
+        private void BtnQuitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
        
