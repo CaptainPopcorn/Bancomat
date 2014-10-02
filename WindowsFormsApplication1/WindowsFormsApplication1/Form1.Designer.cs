@@ -70,7 +70,6 @@
             this.CbXDevise.Name = "CbXDevise";
             this.CbXDevise.Size = new System.Drawing.Size(157, 21);
             this.CbXDevise.TabIndex = 1;
-            this.CbXDevise.SelectedIndexChanged += new System.EventHandler(this.CbXDevise_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -88,7 +87,6 @@
             this.TxBEntiers.Name = "TxBEntiers";
             this.TxBEntiers.Size = new System.Drawing.Size(154, 20);
             this.TxBEntiers.TabIndex = 3;
-            this.TxBEntiers.TextChanged += new System.EventHandler(this.TxBEntiers_TextChanged);
             this.TxBEntiers.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxBEntiers_KeyPress);
             // 
             // label2
@@ -128,6 +126,7 @@
             this.BtnValider.TabIndex = 7;
             this.BtnValider.Text = "Valider";
             this.BtnValider.UseVisualStyleBackColor = true;
+            this.BtnValider.Click += new System.EventHandler(this.BtnValider_Click);
             // 
             // BtnEffacer
             // 
@@ -173,14 +172,14 @@
             // aProposDeToolStripMenuItem
             // 
             this.aProposDeToolStripMenuItem.Name = "aProposDeToolStripMenuItem";
-            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aProposDeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.aProposDeToolStripMenuItem.Text = "A propos de...";
             this.aProposDeToolStripMenuItem.Click += new System.EventHandler(this.aProposDeToolStripMenuItem_Click);
             // 
             // aideToolStripMenuItem1
             // 
             this.aideToolStripMenuItem1.Name = "aideToolStripMenuItem1";
-            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aideToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.aideToolStripMenuItem1.Text = "Aide";
             this.aideToolStripMenuItem1.Click += new System.EventHandler(this.aideToolStripMenuItem1_Click);
             // 

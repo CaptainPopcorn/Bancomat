@@ -17,10 +17,6 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-
-        }
         // Accept only number
         private void TxBEntiers_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -42,18 +38,7 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void CbXDevise_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void TxBEntiers_TextChanged(object sender, EventArgs e)
-        {
-            int[] valeurBillets = {1000, 200, 100, 50, 20, 10, 5, 2, 1};
-            int[] valeurCentimes = {50, 20, 10, 5};
-            TxBResultat.Lines = Retrait(Int32.Parse(TxBEntiers.Text), Int32.Parse(TxBCentimes.Text), valeurBillets, valeurCentimes, "chf");
-
-        }
         public string[] Retrait(int entier, int centimes, int[] valeurBillets, int[] valeurCentimes, string devise)
         {
             string[] lignes;
@@ -96,6 +81,22 @@ namespace WindowsFormsApplication1
         {
             //JTR : TEST
             
+        }
+
+        private void BtnValider_Click(object sender, EventArgs e)
+        {
+           
+            if (TxBEntiers.Text == "")
+            {
+                TxBEntiers.Text = "0";
+            }
+            if (TxBCentimes.Text == "")
+            {
+                TxBCentimes.Text = "0";
+            }
+            int[] valeurBillets = { 1000, 200, 100, 50, 20, 10, 5, 2, 1 };
+            int[] valeurCentimes = { 50, 20, 10, 5 };
+            TxBResultat.Lines = Retrait(Int32.Parse(TxBEntiers.Text), Int32.Parse(TxBCentimes.Text), valeurBillets, valeurCentimes, "chf");
         }
 
        
