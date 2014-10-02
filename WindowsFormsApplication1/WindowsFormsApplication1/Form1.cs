@@ -105,9 +105,24 @@ namespace WindowsFormsApplication1
             {
                 TxBCentimes.Text = "0";
             }
-            int[] valeurBillets = { 1000, 200, 100, 50, 20, 10, 5, 2, 1 };
-            int[] valeurCentimes = { 50, 20, 10, 5 };
+            
             TxBResultat.Lines = Retrait(Int32.Parse(TxBEntiers.Text), Int32.Parse(TxBCentimes.Text), valeurBillets, valeurCentimes, "chf");
+        }
+
+        private void CbXDevise_TextChanged(object sender, EventArgs e)
+        {
+            switch (CbXDevise.SelectedIndex) {
+                case 0:
+                    int[] valeurBillets = { 1000, 200, 100, 50, 20, 10, 5, 2, 1 };
+                    int[] valeurCentimes = { 50, 20, 10, 5 };                  
+                   break;
+
+               case   1:;
+                   break;
+
+               case    2:;
+                   break;
+        }
         }
 
        
