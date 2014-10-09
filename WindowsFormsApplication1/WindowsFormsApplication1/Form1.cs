@@ -12,8 +12,7 @@ namespace WindowsFormsApplication1
 {
     public partial class FrmBancomat : Form
     {
-        public static int[] valeurBillets = new int[15];
-        public static int[] valeurCentimes = new int[15];
+        public static int[] valeurs = new int[20];
         public static string Devise;
         public FrmBancomat()
         {
@@ -41,55 +40,58 @@ namespace WindowsFormsApplication1
 
         }
 
-
+        public string[] AfficheLicorne(int i, string[] lignes)
+        {
+            lignes[i] = "            /      ";
+            lignes[i + 1] = "          ;=',_   ";
+            lignes[i + 2] = "         S\" .--` ";
+            lignes[i + 3] = "        sS  \\__   ";
+            lignes[i + 4] = "     __.' ( \\-->  ";
+            lignes[i + 5] = "  _=/    _./-\\/   ";
+            lignes[i + 6] = " ((\\( /-'   -'l   ";
+            lignes[i + 7] = "  ) |/ \\         ";
+            lignes[i + 8] = "    \\  \\         ";
+            lignes[i + 9] = "      `~ `~       ";
+            return (lignes);
+        }
         public string[] Retrait(int entier, int centimes)
         {
             string[] lignes;
             lignes = new string[50];
             int nbBillets = 0, i = 0;
-            double memEntier = Convert.ToSingle(entier);
-            double memCentimes = Convert.ToSingle(centimes);
+            double memValeur = entier;
+            int lastValeur = 0;
+            bool estEntier = true;
 
             // traitement des entiers           
-            foreach (int valeur in FrmBancomat.valeurBillets)
+            foreach (int valeur in FrmBancomat.valeurs)
             {
+                if ((valeur > lastValeur) && (lastValeur != 0))
+                {
+                    estEntier = false;
+                    memValeur = centimes;
+                }
                 if (valeur != 0)
                 {
-                    nbBillets = Convert.ToInt32(Math.Floor(memEntier / valeur));
+                    nbBillets = Convert.ToInt32(Math.Floor(memValeur / valeur));
                 }
-                memEntier -= valeur * nbBillets;
+                memValeur -= valeur * nbBillets;
                 if (nbBillets != 0)
                 {
-                    lignes[i] = nbBillets.ToString() + " x " + valeur.ToString() + " " + FrmBancomat.Devise;
+                    lignes[i] = nbBillets.ToString() + " x " + valeur.ToString();
+                    if (!estEntier)
+                    {
+                        lignes[i] += " cts de ";
+                    }
+                    lignes[i] += FrmBancomat.Devise;
                     i++;
                 }
                 nbBillets = 0;
+                lastValeur = valeur;
 
             }
-            // traitement des centimes      
-            foreach (int valeur in FrmBancomat.valeurCentimes)
-            {
-                if (valeur != 0)
-                   nbBillets = Convert.ToInt32(Math.Floor(memCentimes / valeur));
-                memCentimes -= valeur * nbBillets;
-                if (nbBillets != 0)
-                {
-                    lignes[i] = nbBillets.ToString() + " x " + valeur.ToString() + " cts de " + FrmBancomat.Devise;
-                    i++;
-                }
-                nbBillets = 0;
 
-            }
-            lignes[i] =  "            /      ";                   
-          lignes[i + 1] = "          ;=',_   ";
-          lignes[i + 2] = "         S\" .--` ";
-          lignes[i + 3] = "        sS  \\__   ";
-          lignes[i + 4] = "     __.' ( \\-->  ";
-          lignes[i + 5] = "  _=/    _./-\\/   ";
-          lignes[i + 6] = " ((\\( /-'   -'l   ";
-          lignes[i + 7] = "  ) |/ \\         ";
-          lignes[i + 8] = "    \\  \\         ";
-          lignes[i + 9] = "      `~ `~       ";
+            lignes = AfficheLicorne(i, lignes);
             return (lignes);
 
         }
@@ -133,61 +135,64 @@ namespace WindowsFormsApplication1
             switch (CbXDevise.SelectedIndex)
             {
                 case 0:
-                    FrmBancomat.valeurBillets[0] = 1000;
-                    FrmBancomat.valeurBillets[1] = 200;
-                    FrmBancomat.valeurBillets[2] = 100;
-                    FrmBancomat.valeurBillets[3] = 50;
-                    FrmBancomat.valeurBillets[4] = 20;
-                    FrmBancomat.valeurBillets[5] = 10;
-                    FrmBancomat.valeurBillets[6] = 5;
-                    FrmBancomat.valeurBillets[7] = 2;
-                    FrmBancomat.valeurBillets[8] = 1;
+                    FrmBancomat.valeurs[0] = 1000;
+                    FrmBancomat.valeurs[1] = 200;
+                    FrmBancomat.valeurs[2] = 100;
+                    FrmBancomat.valeurs[3] = 50;
+                    FrmBancomat.valeurs[4] = 20;
+                    FrmBancomat.valeurs[5] = 10;
+                    FrmBancomat.valeurs[6] = 5;
+                    FrmBancomat.valeurs[7] = 2;
+                    FrmBancomat.valeurs[8] = 1;
 
-                    FrmBancomat.valeurCentimes[0] = 50;
-                    FrmBancomat.valeurCentimes[1] = 20;
-                    FrmBancomat.valeurCentimes[2] = 10;
-                    FrmBancomat.valeurCentimes[3] = 5;
-                    FrmBancomat.valeurCentimes[4] = 0;
-                    FrmBancomat.valeurCentimes[5] = 0;
+                    FrmBancomat.valeurs[9] = 50;
+                    FrmBancomat.valeurs[10] = 20;
+                    FrmBancomat.valeurs[11] = 10;
+                    FrmBancomat.valeurs[12] = 5;
+                    FrmBancomat.valeurs[13] = 0;
+                    FrmBancomat.valeurs[14] = 0;
 
                     FrmBancomat.Devise = "CHF";
                     break;
 
                 case 1:
-                    FrmBancomat.valeurBillets[0] = 500;
-                    FrmBancomat.valeurBillets[1] = 200;
-                    FrmBancomat.valeurBillets[2] = 100;
-                    FrmBancomat.valeurBillets[3] = 50;
-                    FrmBancomat.valeurBillets[4] = 20;
-                    FrmBancomat.valeurBillets[5] = 10;
-                    FrmBancomat.valeurBillets[6] = 5;
-                    FrmBancomat.valeurBillets[7] = 2;
-                    FrmBancomat.valeurBillets[8] = 1;
+                    FrmBancomat.valeurs[0] = 500;
+                    FrmBancomat.valeurs[1] = 200;
+                    FrmBancomat.valeurs[2] = 100;
+                    FrmBancomat.valeurs[3] = 50;
+                    FrmBancomat.valeurs[4] = 20;
+                    FrmBancomat.valeurs[5] = 10;
+                    FrmBancomat.valeurs[6] = 5;
+                    FrmBancomat.valeurs[7] = 2;
+                    FrmBancomat.valeurs[8] = 1;
 
-                    FrmBancomat.valeurCentimes[0] = 50;
-                    FrmBancomat.valeurCentimes[1] = 20;
-                    FrmBancomat.valeurCentimes[2] = 10;
-                    FrmBancomat.valeurCentimes[3] = 5;
-                    FrmBancomat.valeurCentimes[4] = 2;
-                    FrmBancomat.valeurCentimes[5] = 1;
+                    FrmBancomat.valeurs[9] = 50;
+                    FrmBancomat.valeurs[10] = 20;
+                    FrmBancomat.valeurs[11] = 10;
+                    FrmBancomat.valeurs[12] = 5;
+                    FrmBancomat.valeurs[13] = 2;
+                    FrmBancomat.valeurs[14] = 1;
 
                     FrmBancomat.Devise = "€";
                     break;
                 case 2:
-                    FrmBancomat.valeurBillets[0] = 100;
-                    FrmBancomat.valeurBillets[1] = 50;
-                    FrmBancomat.valeurBillets[2] = 20;
-                    FrmBancomat.valeurBillets[3] = 10;
-                    FrmBancomat.valeurBillets[4] = 5;
-                    FrmBancomat.valeurBillets[5] = 2;
-                    FrmBancomat.valeurBillets[6] = 1;
+                    FrmBancomat.valeurs[0] = 100;
+                    FrmBancomat.valeurs[1] = 50;
+                    FrmBancomat.valeurs[2] = 20;
+                    FrmBancomat.valeurs[3] = 10;
+                    FrmBancomat.valeurs[4] = 5;
+                    FrmBancomat.valeurs[5] = 2;
+                    FrmBancomat.valeurs[6] = 1;
 
 
-                    FrmBancomat.valeurCentimes[0] = 50;
-                    FrmBancomat.valeurCentimes[1] = 25;
-                    FrmBancomat.valeurCentimes[2] = 10;
-                    FrmBancomat.valeurCentimes[3] = 5;
-                    FrmBancomat.valeurCentimes[4] = 1;
+                    FrmBancomat.valeurs[7] = 50;
+                    FrmBancomat.valeurs[8] = 25;
+                    FrmBancomat.valeurs[9] = 10;
+                    FrmBancomat.valeurs[10] = 5;
+                    FrmBancomat.valeurs[11] = 1;
+                    FrmBancomat.valeurs[12] = 0;
+                    FrmBancomat.valeurs[13] = 0;
+                    FrmBancomat.valeurs[14] = 0;
 
                     FrmBancomat.Devise = "$";
                     break;
@@ -197,73 +202,9 @@ namespace WindowsFormsApplication1
 
         private void CbXDevise_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FrmBancomat.Devise = CbXDevise.SelectedItem.ToString();
-            switch (CbXDevise.SelectedIndex)
-            {
-                case 0:
-                    FrmBancomat.valeurBillets[0] = 1000;
-                    FrmBancomat.valeurBillets[1] = 200;
-                    FrmBancomat.valeurBillets[2] = 100;
-                    FrmBancomat.valeurBillets[3] = 50;
-                    FrmBancomat.valeurBillets[4] = 20;
-                    FrmBancomat.valeurBillets[5] = 10;
-                    FrmBancomat.valeurBillets[6] = 5;
-                    FrmBancomat.valeurBillets[7] = 2;
-                    FrmBancomat.valeurBillets[8] = 1;
-
-                    FrmBancomat.valeurCentimes[0] = 50;
-                    FrmBancomat.valeurCentimes[1] = 20;
-                    FrmBancomat.valeurCentimes[2] = 10;
-                    FrmBancomat.valeurCentimes[3] = 5;
-                    FrmBancomat.valeurCentimes[4] = 0;
-                    FrmBancomat.valeurCentimes[5] = 0;
-
-                    FrmBancomat.Devise = "CHF";
-                    break;
-
-                case 1:
-                    FrmBancomat.valeurBillets[0] = 500;
-                    FrmBancomat.valeurBillets[1] = 200;
-                    FrmBancomat.valeurBillets[2] = 100;
-                    FrmBancomat.valeurBillets[3] = 50;
-                    FrmBancomat.valeurBillets[4] = 20;
-                    FrmBancomat.valeurBillets[5] = 10;
-                    FrmBancomat.valeurBillets[6] = 5;
-                    FrmBancomat.valeurBillets[7] = 2;
-                    FrmBancomat.valeurBillets[8] = 1;
-
-                    FrmBancomat.valeurCentimes[0] = 50;
-                    FrmBancomat.valeurCentimes[1] = 20;
-                    FrmBancomat.valeurCentimes[2] = 10;
-                    FrmBancomat.valeurCentimes[3] = 5;
-                    FrmBancomat.valeurCentimes[4] = 2;
-                    FrmBancomat.valeurCentimes[5] = 1;
-
-                    FrmBancomat.Devise = "€";
-                    break;
-                case 2:
-                    FrmBancomat.valeurBillets[0] = 100;
-                    FrmBancomat.valeurBillets[1] = 50;
-                    FrmBancomat.valeurBillets[2] = 20;
-                    FrmBancomat.valeurBillets[3] = 10;
-                    FrmBancomat.valeurBillets[4] = 5;
-                    FrmBancomat.valeurBillets[5] = 2;
-                    FrmBancomat.valeurBillets[6] = 1;
 
 
-                    FrmBancomat.valeurCentimes[0] = 50;
-                    FrmBancomat.valeurCentimes[1] = 25;
-                    FrmBancomat.valeurCentimes[2] = 10;
-                    FrmBancomat.valeurCentimes[3] = 5;
-                    FrmBancomat.valeurCentimes[4] = 1;
-
-                    FrmBancomat.Devise = "$";
-                    break;
-
-            }
         }
-
-
 
 
 
