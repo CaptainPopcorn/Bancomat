@@ -12,7 +12,9 @@ namespace WindowsFormsApplication1
 {
     public partial class FrmBancomat : Form
     {
-        string devise;
+        public static int[] valeurBillets = new int[15];
+        public static int[] valeurCentimes = new int[15];
+        public static string Devise;
         public FrmBancomat()
         {
             InitializeComponent();
@@ -40,7 +42,7 @@ namespace WindowsFormsApplication1
         }
 
 
-        public string[] Retrait(int entier, int centimes, int[] valeurBillets, int[] valeurCentimes, string devise)
+        public string[] Retrait(int entier, int centimes, string devise)
         {
             string[] lignes;
             lignes = new string[15];
@@ -51,7 +53,10 @@ namespace WindowsFormsApplication1
             // traitement des entiers           
             foreach (int valeur in valeurBillets)
             {
-                nbBillets = Convert.ToInt32(Math.Floor(memEntier / valeur));
+                if (valeur != 0)
+                {
+                    nbBillets = Convert.ToInt32(Math.Floor(memEntier / valeur));
+                }
                 memEntier -= valeur * nbBillets;
                 if (nbBillets != 0)
                 {
@@ -64,7 +69,8 @@ namespace WindowsFormsApplication1
             // traitement des centimes      
             foreach (int valeur in valeurCentimes)
             {
-                nbBillets = Convert.ToInt32(Math.Floor(memCentimes / valeur));
+                if (valeur != 0)
+                   nbBillets = Convert.ToInt32(Math.Floor(memCentimes / valeur));
                 memCentimes -= valeur * nbBillets;
                 if (nbBillets != 0)
                 {
@@ -107,23 +113,30 @@ namespace WindowsFormsApplication1
                 TxBCentimes.Text = "0";
             }
             
-            TxBResultat.Lines = Retrait(Int32.Parse(TxBEntiers.Text), Int32.Parse(TxBCentimes.Text), valeurBillets, valeurCentimes, "chf");
+            TxBResultat.Lines = Retrait(Int32.Parse(TxBEntiers.Text), Int32.Parse(TxBCentimes.Text), Devise);
         }
 
         private void CbXDevise_TextChanged(object sender, EventArgs e)
         {
             switch (CbXDevise.SelectedIndex) {
                 case 0:
-                    int[] valeurBillets = { 1000, 200, 100, 50, 20, 10, 5, 2, 1 };
-                    int[] valeurCentimes = { 50, 20, 10, 5 };                  
-                   break;
+                    FrmBancomat.valeurBillets[0] = 1000;
+                    FrmBancomat.valeurBillets[1] = 200;
+                    FrmBancomat.valeurBillets[2] = 100;
+                    FrmBancomat.valeurBillets[3] = 50;
+                    FrmBancomat.valeurBillets[4] = 20;
+                    FrmBancomat.valeurBillets[5] = 10;
+                    FrmBancomat.valeurBillets[6] = 5;
+                    FrmBancomat.valeurBillets[7] = 2;
+                    FrmBancomat.valeurBillets[8] = 1;
 
-               case   1:;
-                   break;
+                    FrmBancomat.valeurCentimes[0] = 50;
+                    FrmBancomat.valeurCentimes[1] = 20;
+                    FrmBancomat.valeurCentimes[2] = 10;
+                    FrmBancomat.valeurCentimes[3] = 5;
                    
-               case    2:;
-                   break;
-        }
+                    FrmBancomat.Devise = "CHF";
+                    break;
             TxBResultat.Lines = Retrait(Int32.Parse(TxBEntiers.Text), Int32.Parse(TxBCentimes.Text), valeurBillets, valeurCentimes, devise);
         }
 
@@ -136,11 +149,29 @@ namespace WindowsFormsApplication1
         {
             devise = CbXDevise.SelectedItem.ToString();
             
-        }
 
-       
-    }
-   
-   
+                    case 1:
+                    FrmBancomat.valeurBillets[0] = 500;
+                    FrmBancomat.valeurBillets[1] = 200;
+                    FrmBancomat.valeurBillets[2] = 100;
+                    FrmBancomat.valeurBillets[3] = 50;
+                    FrmBancomat.valeurBillets[4] = 20;
+                    FrmBancomat.valeurBillets[5] = 10;
+                    FrmBancomat.valeurBillets[6] = 5;
+                    FrmBancomat.valeurBillets[7] = 2;
+                    FrmBancomat.valeurBillets[8] = 1;
+
+                    FrmBancomat.valeurCentimes[0] = 50;
+                    FrmBancomat.valeurCentimes[1] = 20;
+                    FrmBancomat.valeurCentimes[2] = 10;
+                    FrmBancomat.valeurCentimes[3] = 5;
+                    FrmBancomat.valeurCentimes[4] = 2;
+                    FrmBancomat.valeurCentimes[5] = 1;
+
+                    FrmBancomat.Devise = "€";
+                    break;
+                 }
+     
+        }       
+    }   
 }
-
