@@ -161,6 +161,24 @@ namespace WindowsFormsApplication1
 
                     FrmBancomat.Devise = "€";
                     break;
+                case 2:
+                    FrmBancomat.valeurBillets[0] = 100;
+                    FrmBancomat.valeurBillets[1] = 50;
+                    FrmBancomat.valeurBillets[2] = 20;
+                    FrmBancomat.valeurBillets[3] = 10;
+                    FrmBancomat.valeurBillets[4] = 5;
+                    FrmBancomat.valeurBillets[5] = 2;
+                    FrmBancomat.valeurBillets[6] = 1;
+
+
+                    FrmBancomat.valeurCentimes[0] = 50;
+                    FrmBancomat.valeurCentimes[1] = 25;
+                    FrmBancomat.valeurCentimes[2] = 10;
+                    FrmBancomat.valeurCentimes[3] = 5;
+                    FrmBancomat.valeurCentimes[4] = 1;
+
+                    FrmBancomat.Devise = "$";
+                    break;
 
             }
         }
@@ -208,6 +226,24 @@ namespace WindowsFormsApplication1
                     FrmBancomat.valeurCentimes[5] = 1;
 
                     FrmBancomat.Devise = "€";
+                    break;
+                case 2:
+                    FrmBancomat.valeurBillets[0] = 100;
+                    FrmBancomat.valeurBillets[1] = 50;
+                    FrmBancomat.valeurBillets[2] = 20;
+                    FrmBancomat.valeurBillets[3] = 10;
+                    FrmBancomat.valeurBillets[4] = 5;
+                    FrmBancomat.valeurBillets[5] = 2;
+                    FrmBancomat.valeurBillets[6] = 1;
+
+
+                    FrmBancomat.valeurCentimes[0] = 50;
+                    FrmBancomat.valeurCentimes[1] = 25;
+                    FrmBancomat.valeurCentimes[2] = 10;
+                    FrmBancomat.valeurCentimes[3] = 5;
+                    FrmBancomat.valeurCentimes[4] = 1;
+
+                    FrmBancomat.Devise = "$";
                     break;
 
             }
