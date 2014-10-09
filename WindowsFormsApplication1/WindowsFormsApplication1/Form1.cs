@@ -45,7 +45,7 @@ namespace WindowsFormsApplication1
         public string[] Retrait(int entier, int centimes)
         {
             string[] lignes;
-            lignes = new string[15];
+            lignes = new string[50];
             int nbBillets = 0, i = 0;
             double memEntier = Convert.ToSingle(entier);
             double memCentimes = Convert.ToSingle(centimes);
@@ -80,6 +80,16 @@ namespace WindowsFormsApplication1
                 nbBillets = 0;
 
             }
+            lignes[i] =  "            /      ";                   
+          lignes[i + 1] = "          ;=',_   ";
+          lignes[i + 2] = "         S\" .--` ";
+          lignes[i + 3] = "        sS  \\__   ";
+          lignes[i + 4] = "     __.' ( \\-->  ";
+          lignes[i + 5] = "  _=/    _./-\\/   ";
+          lignes[i + 6] = " ((\\( /-'   -'l   ";
+          lignes[i + 7] = "  ) |/ \\         ";
+          lignes[i + 8] = "    \\  \\         ";
+          lignes[i + 9] = "      `~ `~       ";
             return (lignes);
 
         }
