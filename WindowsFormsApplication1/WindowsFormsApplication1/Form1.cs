@@ -147,6 +147,8 @@ namespace WindowsFormsApplication1
                     FrmBancomat.valeurCentimes[1] = 20;
                     FrmBancomat.valeurCentimes[2] = 10;
                     FrmBancomat.valeurCentimes[3] = 5;
+                    FrmBancomat.valeurCentimes[4] = 0;
+                    FrmBancomat.valeurCentimes[5] = 0;
 
                     FrmBancomat.Devise = "CHF";
                     break;
@@ -213,6 +215,8 @@ namespace WindowsFormsApplication1
                     FrmBancomat.valeurCentimes[1] = 20;
                     FrmBancomat.valeurCentimes[2] = 10;
                     FrmBancomat.valeurCentimes[3] = 5;
+                    FrmBancomat.valeurCentimes[4] = 0;
+                    FrmBancomat.valeurCentimes[5] = 0;
 
                     FrmBancomat.Devise = "CHF";
                     break;
