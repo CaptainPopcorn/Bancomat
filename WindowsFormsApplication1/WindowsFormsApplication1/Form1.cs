@@ -42,7 +42,7 @@ namespace WindowsFormsApplication1
         }
 
 
-        public string[] Retrait(int entier, int centimes, string devise)
+        public string[] Retrait(int entier, int centimes)
         {
             string[] lignes;
             lignes = new string[15];
@@ -51,7 +51,7 @@ namespace WindowsFormsApplication1
             double memCentimes = Convert.ToSingle(centimes);
 
             // traitement des entiers           
-            foreach (int valeur in valeurBillets)
+            foreach (int valeur in FrmBancomat.valeurBillets)
             {
                 if (valeur != 0)
                 {
@@ -60,21 +60,21 @@ namespace WindowsFormsApplication1
                 memEntier -= valeur * nbBillets;
                 if (nbBillets != 0)
                 {
-                    lignes[i] = nbBillets.ToString() + " x " + valeur.ToString() + " " + devise;
+                    lignes[i] = nbBillets.ToString() + " x " + valeur.ToString() + " " + FrmBancomat.Devise;
                     i++;
                 }
                 nbBillets = 0;
 
             }
             // traitement des centimes      
-            foreach (int valeur in valeurCentimes)
+            foreach (int valeur in FrmBancomat.valeurCentimes)
             {
                 if (valeur != 0)
                    nbBillets = Convert.ToInt32(Math.Floor(memCentimes / valeur));
                 memCentimes -= valeur * nbBillets;
                 if (nbBillets != 0)
                 {
-                    lignes[i] = nbBillets.ToString() + " x " + valeur.ToString() + " cts de " + devise;
+                    lignes[i] = nbBillets.ToString() + " x " + valeur.ToString() + " cts de " + FrmBancomat.Devise;
                     i++;
                 }
                 nbBillets = 0;
@@ -113,12 +113,15 @@ namespace WindowsFormsApplication1
                 TxBCentimes.Text = "0";
             }
             
-            TxBResultat.Lines = Retrait(Int32.Parse(TxBEntiers.Text), Int32.Parse(TxBCentimes.Text), Devise);
+            TxBResultat.Lines = Retrait(Int32.Parse(TxBEntiers.Text), Int32.Parse(TxBCentimes.Text));
         }
 
-        private void CbXDevise_TextChanged(object sender, EventArgs e)
+
+        private void FrmBancomat_Activated(object sender, EventArgs e)
         {
-            switch (CbXDevise.SelectedIndex) {
+            FrmBancomat.Devise = CbXDevise.SelectedItem.ToString();
+            switch (CbXDevise.SelectedIndex)
+            {
                 case 0:
                     FrmBancomat.valeurBillets[0] = 1000;
                     FrmBancomat.valeurBillets[1] = 200;
@@ -134,23 +137,11 @@ namespace WindowsFormsApplication1
                     FrmBancomat.valeurCentimes[1] = 20;
                     FrmBancomat.valeurCentimes[2] = 10;
                     FrmBancomat.valeurCentimes[3] = 5;
-                   
+
                     FrmBancomat.Devise = "CHF";
                     break;
-            TxBResultat.Lines = Retrait(Int32.Parse(TxBEntiers.Text), Int32.Parse(TxBCentimes.Text), valeurBillets, valeurCentimes, devise);
-        }
 
-        private void FrmBancomat_Activated(object sender, EventArgs e)
-        {
-            devise = CbXDevise.SelectedItem.ToString();
-        }
-
-        private void CbXDevise_TabIndexChanged(object sender, EventArgs e)
-        {
-            devise = CbXDevise.SelectedItem.ToString();
-            
-
-                    case 1:
+                case 1:
                     FrmBancomat.valeurBillets[0] = 500;
                     FrmBancomat.valeurBillets[1] = 200;
                     FrmBancomat.valeurBillets[2] = 100;
@@ -170,8 +161,62 @@ namespace WindowsFormsApplication1
 
                     FrmBancomat.Devise = "€";
                     break;
-                 }
-     
-        }       
+
+            }
+        }
+
+        private void CbXDevise_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FrmBancomat.Devise = CbXDevise.SelectedItem.ToString();
+            switch (CbXDevise.SelectedIndex)
+            {
+                case 0:
+                    FrmBancomat.valeurBillets[0] = 1000;
+                    FrmBancomat.valeurBillets[1] = 200;
+                    FrmBancomat.valeurBillets[2] = 100;
+                    FrmBancomat.valeurBillets[3] = 50;
+                    FrmBancomat.valeurBillets[4] = 20;
+                    FrmBancomat.valeurBillets[5] = 10;
+                    FrmBancomat.valeurBillets[6] = 5;
+                    FrmBancomat.valeurBillets[7] = 2;
+                    FrmBancomat.valeurBillets[8] = 1;
+
+                    FrmBancomat.valeurCentimes[0] = 50;
+                    FrmBancomat.valeurCentimes[1] = 20;
+                    FrmBancomat.valeurCentimes[2] = 10;
+                    FrmBancomat.valeurCentimes[3] = 5;
+
+                    FrmBancomat.Devise = "CHF";
+                    break;
+
+                case 1:
+                    FrmBancomat.valeurBillets[0] = 500;
+                    FrmBancomat.valeurBillets[1] = 200;
+                    FrmBancomat.valeurBillets[2] = 100;
+                    FrmBancomat.valeurBillets[3] = 50;
+                    FrmBancomat.valeurBillets[4] = 20;
+                    FrmBancomat.valeurBillets[5] = 10;
+                    FrmBancomat.valeurBillets[6] = 5;
+                    FrmBancomat.valeurBillets[7] = 2;
+                    FrmBancomat.valeurBillets[8] = 1;
+
+                    FrmBancomat.valeurCentimes[0] = 50;
+                    FrmBancomat.valeurCentimes[1] = 20;
+                    FrmBancomat.valeurCentimes[2] = 10;
+                    FrmBancomat.valeurCentimes[3] = 5;
+                    FrmBancomat.valeurCentimes[4] = 2;
+                    FrmBancomat.valeurCentimes[5] = 1;
+
+                    FrmBancomat.Devise = "€";
+                    break;
+
+            }
+        }
+
+
+
+
+
+ 
     }   
 }
