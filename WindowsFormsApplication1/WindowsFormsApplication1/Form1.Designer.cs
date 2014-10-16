@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBancomat));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.TxBResultat = new System.Windows.Forms.TextBox();
             this.CbXDevise = new System.Windows.Forms.ComboBox();
@@ -60,6 +61,7 @@
             // 
             // CbXDevise
             // 
+            this.CbXDevise.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbXDevise.FormattingEnabled = true;
             this.CbXDevise.Items.AddRange(new object[] {
             "CHF",
@@ -85,6 +87,7 @@
             // 
             this.TxBEntiers.Location = new System.Drawing.Point(15, 112);
             this.TxBEntiers.Margin = new System.Windows.Forms.Padding(4);
+            this.TxBEntiers.MaxLength = 7;
             this.TxBEntiers.Name = "TxBEntiers";
             this.TxBEntiers.Size = new System.Drawing.Size(154, 20);
             this.TxBEntiers.TabIndex = 3;
@@ -200,9 +203,13 @@
             this.Controls.Add(this.CbXDevise);
             this.Controls.Add(this.TxBResultat);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "FrmBancomat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bancomat";
             this.Activated += new System.EventHandler(this.FrmBancomat_Activated);
             this.Load += new System.EventHandler(this.BtnEffacer_Click);
